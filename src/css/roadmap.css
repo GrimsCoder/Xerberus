@@ -1,0 +1,313 @@
+/* ROADMAP GRID */
+.tda {
+  grid-area: TDA;
+  justify-self: center;
+  align-self: center;
+}
+.ar1 {
+  grid-area: ar1;
+  justify-self: center;
+  align-self: center;
+}
+.srs {
+  grid-area: SRS;
+  justify-self: center;
+  align-self: center;
+}
+.au1 {
+  grid-area: au1;
+  justify-self: center;
+  align-self: center;
+}
+.adr1 {
+  grid-area: adr1;
+  justify-self: center;
+  align-self: center;
+}
+.adr2 {
+  grid-area: adr2;
+  justify-self: center;
+  align-self: center;
+}
+.in1 {
+  grid-area: IN1;
+  justify-self: center;
+  align-self: center;
+}
+.ar2 {
+  grid-area: ar2;
+  justify-self: center;
+  align-self: center;
+}
+.sa {
+  grid-area: SA;
+  justify-self: center;
+  align-self: center;
+}
+.pd {
+  grid-area: PD;
+  justify-self: center;
+  align-self: center;
+}
+.trs {
+  grid-area: TRS;
+  justify-self: center;
+  align-self: center;
+}
+.adr3 {
+  grid-area: adr3;
+  justify-self: center;
+  align-self: center;
+}
+.ad1 {
+  grid-area: ad1;
+  justify-self: center;
+  align-self: center;
+}
+.aur1 {
+  grid-area: aur1;
+  justify-self: center;
+  align-self: center;
+}
+.adr4 {
+  grid-area: adr4;
+  justify-self: center;
+  align-self: center;
+}
+.in2 {
+  grid-area: IN2;
+  justify-self: center;
+  align-self: center;
+}
+.ar3 {
+  grid-area: ar3;
+  justify-self: center;
+  align-self: center;
+}
+.pm {
+  grid-area: PM;
+  justify-self: center;
+  align-self: center;
+}
+.ar4 {
+  grid-area: ar4;
+  justify-self: center;
+  align-self: center;
+}
+.rm {
+  grid-area: RM;
+  justify-self: center;
+  align-self: center;
+}
+.ar5 {
+  grid-area: ar5;
+  justify-self: center;
+  align-self: center;
+}
+.cf {
+  grid-area: CF;
+  justify-self: center;
+  align-self: center;
+}
+.ar6 {
+  grid-area: ar6;
+  justify-self: center;
+  align-self: center;
+}
+.ps {
+  grid-area: PS;
+  justify-self: center;
+  align-self: center;
+}
+.roadmap {
+  display: grid;
+  grid-template-areas:
+    ". . TDA ar1 SRS . . . ."
+    ". . au1 adr1 . adr2 . . ."
+    "IN1 ar2 SA . PD . TRS . ."
+    ". . . adr3 ad1 aur1 . adr4 ."
+    "IN2 ar3 PM ar4 RM ar5 CF ar6 PS";
+  gap: 10px;
+}
+
+/* ROADMAP CARDS */
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  place-items: center;
+  justify-content: center;
+  align-items: start;
+  position: relative;
+  padding: 5rem 0 5rem 0;
+
+  background-color: black;
+  /* @include breakpoint-down(small) {
+    padding: 1.5rem; */
+}
+
+.workCard0 {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px rgba(46, 70, 245, 0.5);
+  text-align: center;
+  margin: 4rem;
+  padding-bottom: 3rem;
+  width: 30rem;
+  height: fit-content;
+  transition: 0.2s ease-in-out;
+  /* @include breakpoint-down(mobile) {
+      margin: 2rem 0;
+      width: 85vw;
+      height: fit-content; */
+}
+.workCard0:hover {
+  box-shadow: 0px 0px 300px rgba(46, 70, 245, 1);
+  transform: scale(1.2);
+}
+.workCard1 {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px rgba(199, 36, 177, 0.5);
+  text-align: center;
+  margin: 4rem;
+  padding-bottom: 3rem;
+  width: 30rem;
+  height: fit-content;
+  transition: 0.2s ease-in-out;
+  /* @include breakpoint-down(mobile) {
+      margin: 2rem 0;
+      width: 85vw;
+      height: fit-content; */
+}
+.workCard1:hover {
+  box-shadow: 0px 0px 300px rgba(199, 36, 177, 1);
+  transform: scale(1.2);
+}
+.workCard2 {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px rgba(255, 173, 0, 0.5);
+  text-align: center;
+  margin: 4rem;
+  padding-bottom: 3rem;
+  width: 30rem;
+  height: fit-content;
+  transition: 0.2s ease-in-out;
+  /* @include breakpoint-down(mobile) {
+      margin: 2rem 0;
+      width: 85vw;
+      height: fit-content; */
+}
+.workCard2:hover {
+  box-shadow: 0px 0px 300px rgba(255, 173, 0, 1);
+  transform: scale(1.2);
+}
+.workCard3 {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px rgba(210, 39, 48, 0.5);
+  text-align: center;
+  margin: 4rem;
+  padding-bottom: 3rem;
+  width: 30rem;
+  height: fit-content;
+  transition: 0.2s ease-in-out;
+  /* @include breakpoint-down(mobile) {
+      margin: 2rem 0;
+      width: 85vw;
+      height: fit-content; */
+}
+.workCard3:hover {
+  box-shadow: 0px 0px 300px rgba(210, 39, 48, 1);
+  transform: scale(1.2);
+}
+.workCard4 {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin: 4rem;
+  padding-bottom: 3rem;
+  width: 30rem;
+  height: fit-content;
+  transition: 0.2s ease-in-out;
+  /* @include breakpoint-down(mobile) {
+      margin: 2rem 0;
+      width: 85vw;
+      height: fit-content; */
+}
+.workCard4:hover {
+  box-shadow: 0px 0px 300px rgb(255, 255, 255);
+  transform: scale(1.2);
+}
+
+.videoContainer {
+  height: 5px;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.halfContainer {
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerCard {
+  color: white;
+  position: relative;
+  padding-top: 2rem;
+}
+.headerCard > h2 {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  padding: 0.5rem 0;
+  width: fit-content;
+  z-index: 20;
+  color: white;
+  text-decoration: none;
+  /* @include breakpoint-down(mobile) {
+        font-size: 1rem;
+      }
+      @include breakpoint-down(small) {
+        font-size: 0.8rem;
+      } */
+}
+
+.hr {
+  width: 50px;
+  height: 3px;
+  margin: 20px auto;
+  background: red;
+}
+
+.cardInfo {
+  width: 100%;
+  padding: 0 50px;
+  color: white;
+  font-style: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  /* @include breakpoint-down(mobile) {
+      padding: 0 20px;
+      font-size: 0.8rem;
+      line-height: 1rem;
+    } */
+}

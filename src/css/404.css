@@ -1,0 +1,20 @@
+/* 404 PAGE */
+.glass {
+  padding: 8rem;
+  color: white;
+  background: rgba(255, 253, 253, 0.05);
+  box-shadow: 0 18px 42px 0 rgba(255, 255, 255, 0.17);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.3s;
+}
+.glass:hover {
+  box-shadow: 0 18px 42px 0 rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transform: scale(1.1);
+}
