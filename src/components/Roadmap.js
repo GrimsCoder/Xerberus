@@ -28,7 +28,7 @@ function Roadmap() {
         size={50}
         className="absolute -top-[7rem] text-gray-200 text-center w-full z-[3]"
       />
-      <div className="flex relative items-center justify-center bg-fixed bg-no-repeat bg-center bg-auto sm:bg-cover xrb-bg-img">
+      <div className="flex relative items-center justify-center  bg-no-repeat bg-center bg-auto sm:bg-cover xrb-bg-img">
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]"></div>
         <h1 className="w-[screen] text-2xl md:text-5xl text-center font-bold pt-20 pb-20 text-white z-[3]">
           ROAD <span style={{ color: "#ff0000" }}>MAP</span>
