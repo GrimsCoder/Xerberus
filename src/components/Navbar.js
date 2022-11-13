@@ -104,13 +104,7 @@ function Navbar({ navBgColor1, navTextColor1, border }) {
         {/* mobile version */}
 
         {click ? (
-          <div
-            className={
-              click
-                ? "fixed top-0 right-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border"
-                : "fixed -right-[100%] top-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border"
-            }
-          >
+          <div className="fixed top-0 right-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border">
             <Link to="/scores">
               <h1
                 style={{ color: "#000" }}
@@ -144,7 +138,7 @@ function Navbar({ navBgColor1, navTextColor1, border }) {
               target="_blank"
               rel="noreferrer"
             >
-              <h1 style={{ color: `${textColor}` }} className="p-4 text-2xl">
+              <h1 style={{ color: "#000" }} className="p-4 text-2xl">
                 Docs
               </h1>
             </a>
