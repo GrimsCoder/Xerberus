@@ -76,7 +76,7 @@ function DashboardTable() {
   return (
     <div className="flex flex-col w-[100%]">
       <table>
-        <thead className="  top-0 bg-white z-30">
+        <thead className=" -webkit-sticky  top-0 bg-white z-30">
           <tr>
             <th className=" -webkit-sticky   left-0 bg-white z-30 flex items-center justify-between">
               <button
