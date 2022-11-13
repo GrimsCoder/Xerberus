@@ -120,7 +120,7 @@
     width: 40rem;
   }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 625px) {
   .modal {
     width: 30rem;
   }
@@ -138,6 +138,7 @@
   .modalContent {
     font-size: 1rem;
     line-height: 1.5;
+    padding: 1rem 1rem;
   }
   .heading {
     font-size: 1.5rem;
@@ -147,6 +148,7 @@
     padding: 0rem 1.9rem;
     font-size: 1rem;
     line-height: 1.2;
+    margin: 0 2rem;
   }
   .linkBtn {
     padding: 0rem 2rem;

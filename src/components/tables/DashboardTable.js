@@ -76,40 +76,41 @@ function DashboardTable() {
   return (
     <div className="flex flex-col w-[100%]">
       <table>
-        <thead className="sticky   top-0 bg-white z-30">
+        <thead className="sticky top-0 bg-white z-30">
           <tr>
-            <th className=" tester sticky left-0 bg-white z-30  items-center justify-between">
-              <button
-                type="button"
-                onClick={() => requestSort("token")}
-                className={getClassNamesFor("token")}
-              >
-                Token
-              </button>
-              <div className="flex items-center justify-center h-full">
-                <span
-                  className="border-2 border-black rounded cursor-pointer hover:scale-110 hover:mb-1 mx-2"
-                  onClick={() => setAvg(!avg)}
+            <th className="sticky left-0 bg-white z-30 ">
+              <div className=" flex justify-between items-center ">
+                <button
+                  type="button"
+                  onClick={() => requestSort("token")}
+                  className={getClassNamesFor("token")}
                 >
-                  {avg ? (
-                    <TbMathAvg style={{ color: "#00FF00" }} size={20} />
-                  ) : (
-                    <TbMathAvg style={{ color: "#ff0000" }} size={20} />
-                  )}
-                </span>
-                <span
-                  className="border-2 border-black rounded cursor-pointer hover:scale-110 hover:mb-1 mx-2"
-                  onClick={() => setAmount(!amount)}
-                >
-                  {amount ? (
-                    <FaPercentage size={20} />
-                  ) : (
-                    <AiOutlineFieldNumber size={20} />
-                  )}
-                </span>
+                  Token
+                </button>
+                <div className="flex items-center justify-center h-full">
+                  <span
+                    className="border-2 border-black rounded cursor-pointer hover:scale-110 hover:mb-1 mx-2"
+                    onClick={() => setAvg(!avg)}
+                  >
+                    {avg ? (
+                      <TbMathAvg style={{ color: "#00FF00" }} size={20} />
+                    ) : (
+                      <TbMathAvg style={{ color: "#ff0000" }} size={20} />
+                    )}
+                  </span>
+                  <span
+                    className="border-2 border-black rounded cursor-pointer hover:scale-110 hover:mb-1 mx-2"
+                    onClick={() => setAmount(!amount)}
+                  >
+                    {amount ? (
+                      <FaPercentage size={20} />
+                    ) : (
+                      <AiOutlineFieldNumber size={20} />
+                    )}
+                  </span>
+                </div>
               </div>
             </th>
-
             <th className="relative">
               <span className={styles.info}>
                 <i
@@ -278,25 +279,28 @@ function DashboardTable() {
           {items.map((asset) => (
             <tr
               key={asset.token}
-              className="hover:bg-slate-50 hover:translate-y-px z-10"
+              className="hover:bg-slate-50 hover:translate-y-px z-10 "
             >
               {/* <Link to={`/scores/${asset.token}`}> */}
-              <td className="tester  justify-start items-center sticky left-0 bg-white hover:bg-slate-50 z-20">
-                <img
-                  src={asset.logo}
-                  className="w-8 mr-3 rounded-full"
-                  alt=""
-                  token
-                />
-                {asset.verified === "true" ? (
-                  <div className="pr-10 relative">
-                    {asset.token}
-                    <MdVerified className="absolute top-0 right-6 text-green-500" />
-                  </div>
-                ) : (
-                  <div className="pr-4 relative">{asset.token}</div>
-                )}
+              <td className=" sticky left-0 bg-white hover:bg-slate-50 z-20">
+                <div className=" flex  items-center  ">
+                  <img
+                    src={asset.logo}
+                    className="w-8 mr-3 rounded-full "
+                    alt=""
+                    token
+                  />
+                  {asset.verified === "true" ? (
+                    <div className="pr-10 relative ">
+                      {asset.token}
+                      <MdVerified className="absolute top-0 right-6 text-green-500 " />
+                    </div>
+                  ) : (
+                    <div className="pr-4 relative ">{asset.token}</div>
+                  )}
+                </div>
               </td>
+
               {/* </Link> */}
 
               {asset.utility === " A" ? (
