@@ -129,3 +129,29 @@
     font-size: 1.3rem;
   }
 }
+@media screen and (max-width: 400px) {
+  .modal {
+    width: 20rem;
+    padding: 2rem 1rem;
+  }
+
+  .modalContent {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .heading {
+    font-size: 1.5rem;
+    line-height: 2;
+  }
+  .cancelBtn {
+    padding: 0rem 1.9rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  .linkBtn {
+    padding: 0rem 2rem;
+
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+}
