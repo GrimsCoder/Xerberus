@@ -78,7 +78,7 @@ function DashboardTable() {
       <table>
         <thead className="sticky -webkit-sticky -moz-sticky -o-sticky -ms-sticky  top-0 bg-white z-30">
           <tr>
-            <th className="sticky -webkit-sticky -moz-sticky -o-sticky -ms-sticky  left-0 bg-white z-30 flex items-center justify-between">
+            <th className="sticky -webkit-sticky -moz-sticky -o-sticky -ms-sticky block  left-0 bg-white z-30 flex items-center justify-between">
               <button
                 type="button"
                 onClick={() => requestSort("token")}
@@ -281,7 +281,7 @@ function DashboardTable() {
               className="hover:bg-slate-50 hover:translate-y-px z-10"
             >
               {/* <Link to={`/scores/${asset.token}`}> */}
-              <td className="flex justify-start items-center -webkit-sticky -moz-sticky -o-sticky -ms-sticky sticky left-0 bg-white  hover:bg-slate-50 z-20">
+              <td className="flex justify-start items-center block -webkit-sticky -moz-sticky -o-sticky -ms-sticky sticky left-0 bg-white  hover:bg-slate-50 z-20">
                 <img
                   src={asset.logo}
                   className="w-8 mr-3 rounded-full"
