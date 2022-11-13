@@ -65,6 +65,14 @@ html {
   }
 }
 
+.tester {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  position: sticky;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
