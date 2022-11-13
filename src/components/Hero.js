@@ -16,7 +16,7 @@ function Hero() {
     window.addEventListener("scroll", changeColor);
   }, []);
   return (
-    <div className="flex items-center justify-center h-screen bg-fixed bg-no-repeat bg-center bg-auto sm:bg-cover xrb-bg-img">
+    <div className="flex items-center justify-center h-screen  bg-no-repeat bg-center bg-auto sm:bg-cover xrb-bg-img">
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2] h-screen"></div>
       <div className="p-5 text-white z-[2]">
         <h2 className="text-5xl font-bold text-center">Token Risk Alerts</h2>
