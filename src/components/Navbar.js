@@ -103,51 +103,56 @@ function Navbar({ navBgColor1, navTextColor1, border }) {
 
         {/* mobile version */}
 
-        <div
-          className={
-            click
-              ? "fixed top-0 right-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border"
-              : "fixed -right-[100%] top-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border"
-          }
-        >
-          <Link to="/scores">
-            <h1
-              style={{ color: "#000" }}
-              className="p-4 text-2xl font-bold border shadow-lg"
-            >
-              Risk Scores
-            </h1>
-          </Link>
-          <Link to="/">
-            <h1 style={{ color: "#000" }} className="p-4 text-2xl">
-              Home
-            </h1>
-          </Link>
-          {/* <Link to="/roadmap">
+        {click ? (
+          <div
+            className={
+              click
+                ? "fixed top-0 right-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border"
+                : "fixed -right-[100%] top-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border"
+            }
+          >
+            <Link to="/scores">
+              <h1
+                style={{ color: "#000" }}
+                className="p-4 text-2xl font-bold border shadow-lg"
+              >
+                Risk Scores
+              </h1>
+            </Link>
+            <Link to="/">
+              <h1 style={{ color: "#000" }} className="p-4 text-2xl">
+                Home
+              </h1>
+            </Link>
+            {/* <Link to="/roadmap">
             <h1 style={{ color: "#000" }} className="p-4 text-2xl">
               Roadmap
             </h1>
           </Link> */}
-          {/* <Link to="/ispo">
+            {/* <Link to="/ispo">
             <h1 style={{ color: "#000" }} className="p-4 text-2xl">
               Ispo
             </h1>
           </Link> */}
-          <Link to="/research">
-            <h1 style={{ color: "#000" }} className="p-4 text-2xl">
-              Research
-            </h1>
-          </Link>
-          <a
-            href="https://documentation.xerberus.io/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h1 style={{ color: `${textColor}` }} className="p-4 text-2xl">
-              Docs
-            </h1>
-          </a>
-        </div>
+            <Link to="/research">
+              <h1 style={{ color: "#000" }} className="p-4 text-2xl">
+                Research
+              </h1>
+            </Link>
+            <a
+              href="https://documentation.xerberus.io/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h1 style={{ color: `${textColor}` }} className="p-4 text-2xl">
+                Docs
+              </h1>
+            </a>
+          </div>
+        ) : (
+          ""
+        )}
+
         <div
           className="flex md:hidden cursor-pointer z-50"
           onClick={handleClick}
