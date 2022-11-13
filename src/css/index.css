@@ -71,7 +71,7 @@ html {
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
-  display: block;
+
   left: 0;
 }
 
