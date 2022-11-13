@@ -279,11 +279,11 @@ function DashboardTable() {
           {items.map((asset) => (
             <tr
               key={asset.token}
-              className="hover:bg-slate-50 hover:translate-y-px z-10 "
+              className="hover:bg-slate-50 hover:translate-y-0 z-10 "
             >
               {/* <Link to={`/scores/${asset.token}`}> */}
-              <td className=" sticky left-0 bg-white hover:bg-slate-50 z-20">
-                <div className=" flex  items-center  ">
+              <td className=" tester sticky bg-white  left-0 hover:bg-slate-50   z-20 items-center">
+                <div className=" flex  items-center tester ">
                   <img
                     src={asset.logo}
                     className="w-8 mr-3 rounded-full "
@@ -296,7 +296,7 @@ function DashboardTable() {
                       <MdVerified className="absolute top-0 right-6 text-green-500 " />
                     </div>
                   ) : (
-                    <div className="pr-4 relative ">{asset.token}</div>
+                    <div className="pr-4 relative">{asset.token}</div>
                   )}
                 </div>
               </td>
