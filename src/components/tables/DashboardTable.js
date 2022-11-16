@@ -285,7 +285,29 @@ function DashboardTable() {
             >
               {user && (
                 <Link to={`/scores/${asset.token}`}>
-                  <td className="flex justify-start items-center sticky left-0 bg-white  hover:bg-slate-50 z-20">
+                  <td className="sticky bg-white left-0 hover:bg-slate-50  z-20 ">
+                    <div className=" flex  items-center">
+                      <img
+                        src={asset.logo}
+                        className="w-8 mr-3 rounded-full"
+                        alt=""
+                        token
+                      />
+                      {asset.verified == "true" ? (
+                        <div className="pr-10 relative">
+                          {asset.token}
+                          <MdVerified className="absolute top-0 right-6 text-green-500" />
+                        </div>
+                      ) : (
+                        <div className="pr-4 relative">{asset.token}</div>
+                      )}
+                    </div>
+                  </td>
+                </Link>
+              )}
+              {!user && (
+                <td className="sticky bg-white left-0 hover:bg-slate-50  z-20 ">
+                  <div className=" flex  items-center">
                     <img
                       src={asset.logo}
                       className="w-8 mr-3 rounded-full"
@@ -300,25 +322,7 @@ function DashboardTable() {
                     ) : (
                       <div className="pr-4 relative">{asset.token}</div>
                     )}
-                  </td>
-                </Link>
-              )}
-              {!user && (
-                <td className="flex justify-start items-center sticky left-0 bg-white  hover:bg-slate-50 z-20">
-                  <img
-                    src={asset.logo}
-                    className="w-8 mr-3 rounded-full"
-                    alt=""
-                    token
-                  />
-                  {asset.verified == "true" ? (
-                    <div className="pr-10 relative">
-                      {asset.token}
-                      <MdVerified className="absolute top-0 right-6 text-green-500" />
-                    </div>
-                  ) : (
-                    <div className="pr-4 relative">{asset.token}</div>
-                  )}
+                  </div>
                 </td>
               )}
 
