@@ -19,7 +19,6 @@ function NotFound() {
           className="absolute"
           frameBorder="0"
         ></iframe>
-
         <div className="absolute flex items-center justify-center w-screen h-screen z-20 bg-transparent">
           <Link to="/" className="glass">
             <h1 className="md:text-xl">

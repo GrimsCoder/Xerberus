@@ -23,20 +23,20 @@ function Hero() {
         <p className="py-5 text-xl text-center">
           Your Risk Manager for Cardano Tokens
         </p>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://docsend.com/view/kw5uizzscsh36sqj"
+        >
+          <button className="py-2 border w-full bg-white text-black text-2xl font-bold mb-5 hover:scale-105">
+            White<span style={{ color: "#ff0000" }}>paper</span>
+          </button>
+        </a>
         <Link to="/scores">
           <button className="py-2 border w-full bg-white text-black text-2xl font-bold hover:scale-105">
             Explore <span style={{ color: "#ff0000" }}>Risk</span> Scores
           </button>
         </Link>
-        {/* <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://discord.gg/pENmUnABrS"
-        >
-          <button className="py-2 border w-full bg-white text-black text-2xl font-bold">
-            Join the <span style={{ color: "#ff0000" }}>Discord </span>
-          </button>
-        </a> */}
       </div>
       <IoIosArrowDown
         size={50}

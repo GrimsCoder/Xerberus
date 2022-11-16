@@ -139,7 +139,6 @@
   align-items: start;
   position: relative;
   padding: 5rem 0 5rem 0;
-
   background-color: black;
   /* @include breakpoint-down(small) {
     padding: 1.5rem; */

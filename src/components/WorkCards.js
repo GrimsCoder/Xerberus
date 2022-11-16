@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { work } from "../data/constants";
-import { GlobalContext } from "./GlobalContext";
+import { GlobalContext } from "../context/GlobalContext";
 
 const WorkCards = () => {
   const context = useContext(GlobalContext);

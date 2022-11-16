@@ -3,21 +3,22 @@ import { MdVerified } from "react-icons/md";
 import { FaPercentage } from "react-icons/fa";
 import { AiOutlineFieldNumber } from "react-icons/ai";
 import { TbMathAvg } from "react-icons/tb";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import useSortTableData from "../useSortableData";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import Modal from "../Modal.js";
 import styles from "../../css/Modal.module.css";
 import { info } from "../../data/info";
 
 function DashboardTable() {
+  const { user } = useAuthContext();
   const [scores, setScores] = useState([]);
   const [amount, setAmount] = useState(false);
   const [avg, setAvg] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
   const { items, requestSort, sortConfig } = useSortTableData(scores);
-
   const getClassNamesFor = (name) => {
     if (!sortConfig) {
       return;
@@ -111,6 +112,7 @@ function DashboardTable() {
                 </div>
               </div>
             </th>
+
             <th className="relative">
               <span className={styles.info}>
                 <i
@@ -281,27 +283,44 @@ function DashboardTable() {
               key={asset.token}
               className="hover:bg-slate-50 hover:translate-y-0 z-10 "
             >
-              {/* <Link to={`/scores/${asset.token}`}> */}
-              <td className=" tester sticky bg-white  left-0 hover:bg-slate-50   z-20 items-center">
-                <div className=" flex  items-center tester ">
+              {user && (
+                <Link to={`/scores/${asset.token}`}>
+                  <td className="flex justify-start items-center sticky left-0 bg-white  hover:bg-slate-50 z-20">
+                    <img
+                      src={asset.logo}
+                      className="w-8 mr-3 rounded-full"
+                      alt=""
+                      token
+                    />
+                    {asset.verified == "true" ? (
+                      <div className="pr-10 relative">
+                        {asset.token}
+                        <MdVerified className="absolute top-0 right-6 text-green-500" />
+                      </div>
+                    ) : (
+                      <div className="pr-4 relative">{asset.token}</div>
+                    )}
+                  </td>
+                </Link>
+              )}
+              {!user && (
+                <td className="flex justify-start items-center sticky left-0 bg-white  hover:bg-slate-50 z-20">
                   <img
                     src={asset.logo}
-                    className="w-8 mr-3 rounded-full "
+                    className="w-8 mr-3 rounded-full"
                     alt=""
                     token
                   />
-                  {asset.verified === "true" ? (
-                    <div className="pr-10 relative ">
+                  {asset.verified == "true" ? (
+                    <div className="pr-10 relative">
                       {asset.token}
-                      <MdVerified className="absolute top-0 right-6 text-green-500 " />
+                      <MdVerified className="absolute top-0 right-6 text-green-500" />
                     </div>
                   ) : (
                     <div className="pr-4 relative">{asset.token}</div>
                   )}
-                </div>
-              </td>
-
-              {/* </Link> */}
+                </td>
+              )}
 
               {asset.utility === " A" ? (
                 <td className="font-bold text-green-400">{asset.utility}</td>

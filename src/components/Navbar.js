@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useLogout } from "../hooks/useLogout";
+import { useNavigate } from "react-router-dom";
 
 function Navbar({ navBgColor1, navTextColor1, border }) {
+  const { user } = useAuthContext();
+  const { logout } = useLogout();
   const [color, setColor] = useState(navBgColor1);
   const [textColor, setTextColor] = useState(navTextColor1);
   const [click, setClick] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => setClick(!click);
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   useEffect(() => {
     const changeColor = () => {
@@ -48,22 +58,15 @@ function Navbar({ navBgColor1, navTextColor1, border }) {
         </div>
 
         {/* Desktop Version */}
-
         <div className="hidden md:flex items-center mr-5 z-50">
-          <Link to="/scores">
-            <h1
-              style={{ color: `${textColor}` }}
-              className="p-2 font-bold mr-4 border shadow-lg hover:mb-1"
-            >
-              Risk Scores
+          <Link to="/">
+            <h1 style={{ color: `${textColor}` }} className="hoverEffect pr-4">
+              Home
             </h1>
           </Link>
-          <Link to="/">
-            <h1
-              style={{ color: `${textColor}` }}
-              className="hoverEffect pr-4 hover:mb-1"
-            >
-              Home
+          <Link to="/scores">
+            <h1 style={{ color: `${textColor}` }} className="hoverEffect pr-4">
+              Risk Scores
             </h1>
           </Link>
           {/* <Link to="/ispo">
@@ -80,10 +83,7 @@ function Navbar({ navBgColor1, navTextColor1, border }) {
             </h1>
           </Link> */}
           <Link to="/research">
-            <h1
-              style={{ color: `${textColor}` }}
-              className="hoverEffect pr-4 hover:mb-1"
-            >
+            <h1 style={{ color: `${textColor}` }} className="hoverEffect pr-4">
               Research
             </h1>
           </Link>
@@ -92,61 +92,124 @@ function Navbar({ navBgColor1, navTextColor1, border }) {
             target="_blank"
             rel="noreferrer"
           >
-            <h1
-              style={{ color: `${textColor}` }}
-              className="hoverEffect hover:mb-1"
-            >
+            <h1 style={{ color: `${textColor}` }} className="hoverEffect">
               Docs
             </h1>
           </a>
+          {!user && (
+            <div>
+              {/* <Link to="/login">
+                <h1
+                  style={{ color: `${textColor}` }}
+                  className="p-2 rounded ml-4 border shadow-md hover:shadow-lg hover:mb-1"
+                >
+                  Log in
+                </h1>
+              </Link> */}
+              <Link to="/log">
+                <FaUserCircle
+                  style={{ color: `${textColor}` }}
+                  size={30}
+                  className="ml-4 "
+                />
+              </Link>
+            </div>
+          )}
+          {/* {!user && (
+            <div>
+              <Link to="/signup">
+                <h1
+                  style={{ color: `${textColor}` }}
+                  className="p-2 rounded ml-4 border shadow-md hover:shadow-lg hover:mb-1"
+                >
+                  Sign up
+                </h1>
+              </Link>
+            </div>
+          )}{" "} */}
+
+          {user && (
+            <div
+              style={{ color: `${textColor}` }}
+              className="p-2 rounded ml-4 border shadow-md hover:shadow-lg hover:mb-1"
+            >
+              <button onClick={handleLogout}>Log out</button>
+            </div>
+          )}
         </div>
 
         {/* mobile version */}
 
-        {click ? (
-          <div className="fixed top-0 right-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border">
-            <Link to="/scores">
-              <h1
-                style={{ color: "#000" }}
-                className="p-4 text-2xl font-bold border shadow-lg"
-              >
-                Risk Scores
-              </h1>
-            </Link>
-            <Link to="/">
-              <h1 style={{ color: "#000" }} className="p-4 text-2xl">
-                Home
-              </h1>
-            </Link>
-            {/* <Link to="/roadmap">
+        <div
+          className={
+            click
+              ? "fixed top-0 right-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border"
+              : "fixed -right-[100%] top-0 flex flex-col bg-white justify-center items-center w-[100vw] h-[100vh] text-center z-50 nav-effect border"
+          }
+        >
+          {!user && (
+            <div className="flex flex-col">
+              <Link to="/log">
+                <h1
+                  style={{ color: "#000" }}
+                  className="p-2 rounded mb-4 border shadow-lg text-2xl"
+                >
+                  Log in
+                </h1>
+              </Link>
+              {/* <Link to="/signup">
+                <h1
+                  style={{ color: "#000" }}
+                  className="p-2 rounded mb-4 border shadow-lg text-2xl"
+                >
+                  Sign up
+                </h1>
+              </Link> */}
+            </div>
+          )}
+          {user && (
+            <div
+              style={{ color: "#000" }}
+              className="p-2 rounded mb-4 border shadow-lg text-2xl"
+            >
+              <button onClick={handleLogout}>Log out</button>
+            </div>
+          )}
+          <Link to="/">
+            <h1 style={{ color: "#000" }} className="p-4 text-2xl">
+              Home
+            </h1>
+          </Link>
+          <Link to="/scores">
+            <h1 style={{ color: "#000" }} className="p-4 text-2xl">
+              Risk Scores
+            </h1>
+          </Link>
+          {/* <Link to="/roadmap">
             <h1 style={{ color: "#000" }} className="p-4 text-2xl">
               Roadmap
             </h1>
           </Link> */}
-            {/* <Link to="/ispo">
+          {/* <Link to="/ispo">
             <h1 style={{ color: "#000" }} className="p-4 text-2xl">
               Ispo
             </h1>
           </Link> */}
-            <Link to="/research">
-              <h1 style={{ color: "#000" }} className="p-4 text-2xl">
-                Research
-              </h1>
-            </Link>
-            <a
-              href="https://documentation.xerberus.io/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <h1 style={{ color: "#000" }} className="p-4 text-2xl">
-                Docs
-              </h1>
-            </a>
-          </div>
-        ) : (
-          ""
-        )}
-
+          <Link to="/research">
+            <h1 style={{ color: "#000" }} className="p-4 text-2xl">
+              Research
+            </h1>
+          </Link>
+          <a
+            href="https://documentation.xerberus.io/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <h1 style={{ color: "#000" }} className="p-4 text-2xl">
+              Docs
+            </h1>
+          </a>
+        </div>
         <div
           className="flex md:hidden cursor-pointer z-50"
           onClick={handleClick}

@@ -18,15 +18,6 @@ const Modals = ({ setIsOpen, setShow, body, header, link }) => {
             <h5 className={styles.heading}>{header}</h5>
           </div>
 
-          <button
-            className={styles.closeBtn}
-            onClick={() => {
-              setIsOpen(false);
-              setShow(false);
-            }}
-          >
-            x
-          </button>
           <hr />
           <div className={`md:text-lg ${styles.modalContent}`}>{body}</div>
           <div className={styles.modalActions}>

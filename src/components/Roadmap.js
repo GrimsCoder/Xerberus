@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { GlobalContext } from "./GlobalContext";
+import { GlobalContext } from "../context/GlobalContext";
 
 import { IoIosArrowDown } from "react-icons/io";
 

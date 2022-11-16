@@ -10,7 +10,7 @@ function Scores() {
   return (
     <>
       <div className="flex justify-center">
-        <div class="announcement w-fit text-l md:text-2xl lg:text-5xl z-30">
+        <div className="announcement w-fit text-l md:text-2xl lg:text-5xl z-30">
           <h1 className="h1">
             <span className="a1"> &nbsp; PRE-ALPHA Version&nbsp; </span>
             <span className="a2"> &nbsp; PRE-ALPHA Version&nbsp; </span>

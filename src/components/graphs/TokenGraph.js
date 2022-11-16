@@ -43,17 +43,15 @@ function TokenGraph({ data, logo }) {
     percentage.push((Number(amount) * 100) / sum);
   });
 
-  console.log(percentage);
-
   return (
-    <div className="flex flex-col mt-5 w-[50%]">
+    <div className="flex flex-col items-center justify-center mt-5 w-full lg:w-[50%]">
       <div className="flex justify-center  items-center">
         <h3 className="text-3xl font-bold mb-0 bg-white">
           Token
           <span style={{ color: "#ff0000" }}> Distribution</span>
         </h3>
       </div>
-      <div className="relative w-[100%] h-auto m-auto">
+      <div className="relative w-[80%] lg:w-full h-auto m-auto">
         <img
           src={logo}
           className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[25%] mr-3 rounded-full z-50"

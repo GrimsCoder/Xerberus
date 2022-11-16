@@ -6,8 +6,11 @@ import { MdVerified } from "react-icons/md";
 import TokenGraph from "../components/graphs/TokenGraph";
 import TopWalletTable from "../components/tables/TopWalletTable";
 import localData from "../data/tokens.json";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function Token({ token }) {
+  const { user } = useAuthContext();
+
   const [scores, setScores] = useState([]);
   const [utility, setUtility] = useState("");
   const [asset, setAsset] = useState([]);
@@ -15,6 +18,7 @@ function Token({ token }) {
   const [tableData, setTableData] = useState([]);
 
   const url = "https://backend.xerberus.io/api/v1/data/";
+  // const url = "http://localhost:3006/api/v1/data/";
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -36,7 +40,11 @@ function Token({ token }) {
   };
   const fetchAsset = async () => {
     try {
-      const response = await axios.get(`${url}token?label=tokenPage`);
+      const response = await axios.get(`${url}token?label=tokenPage`, {
+        headers: {
+          Authorization: user.token,
+        },
+      });
       const res = response.data;
       Object.values(res).forEach(function (val) {
         if (val.token) {
@@ -76,15 +84,20 @@ function Token({ token }) {
         navTextColor1={"#000"}
         border={" fixed left-0 top-0 w-full z-20 ease-in duration-300"}
       />
-      <div className="fixed flex top-5 left-[45%] z-50">
-        <img src={asset.logo} className="w-8 mr-3 rounded-full" alt="" token />
+      <div className="fixed flex top-[1.15rem] md:top-5 left-[45%] z-50 items-center">
+        <img
+          src={asset.logo}
+          className=" w-4 mr-1 md:w-8 md:mr-3 rounded-full"
+          alt=""
+          token
+        />
         {asset.verified === "true" ? (
           <h2 className="relative text-xl font-bold">
             {asset.token}
             <MdVerified className="absolute top-0 -right-5 text-green-500" />
           </h2>
         ) : (
-          <h2 className="text-xl font-bold">{asset.token}</h2>
+          <h2 className="text-sm md:text-xl font-bold">{asset.token}</h2>
         )}
       </div>
 
@@ -92,10 +105,10 @@ function Token({ token }) {
         <h2 className="p-10 text-2xl md:text-5xl font-bold text-center">
           Token <span style={{ color: "#ff0000" }}>Explorer</span>
         </h2>
-        <div className="flex items-start justify-around w-[95%] md:w-[80%]">
-          <div className="w-[50%] h-full flex flex-col items-center justify-between">
+        <div className=" flex flex-col md:flex-row items-start justify-around w-[95%] md:w-[80%]">
+          <div className="w-full md:w-[50%] h-full flex flex-col items-center justify-between">
             <div className="flex items-center justify-start w-full mb-4">
-              <h2 className="flex text-xl font-bold mb-1 items-center">
+              <h2 className="flex text-xl font-bold mb-1 items-center w-full justify-center">
                 About {asset.token}
               </h2>
             </div>
@@ -112,7 +125,7 @@ function Token({ token }) {
               {data.p4}
             </p>
           </div>
-          <div className="flex flex-col items-center justify-around w-[50%]">
+          <div className="flex flex-col items-center justify-around w-full md:w-[50%] mt-10 md:mt-0">
             {utility === " A" ? (
               <h2 className="text-xl font-bold mb-4">
                 Utility -<span className="text-green-400">{utility}</span>
@@ -142,10 +155,12 @@ function Token({ token }) {
             </div>
           </div>
         </div>
-        <div className="flex m-10 w-[90vw] md:w-[80vw] justify-center  items-start">
-          <TokenGraph data={tableData} logo={asset.logo} />
-          <TopWalletTable data={tableData} />
-        </div>
+        {user && (
+          <div className="flex flex-col lg:flex-row m-10 w-full md:w-[80vw] justify-center  items-start">
+            <TokenGraph data={tableData} logo={asset.logo} />
+            <TopWalletTable data={tableData} />
+          </div>
+        )}
       </div>
       <Footer />
     </>

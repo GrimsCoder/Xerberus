@@ -6,14 +6,14 @@ function TopWalletTable({ data }) {
   }
 
   return (
-    <div className="flex flex-col mt-5 w-[50%]">
+    <div className="flex flex-col mt-5 w-full lg:w-[50%]">
       <div className="flex justify-center  items-center">
         <h3 className="text-3xl font-bold bg-white mb-5">
           Top 25
           <span style={{ color: "#ff0000" }}> Wallets</span>
         </h3>
       </div>
-      <div className="overflow-auto h-[65vh] flex flex-col ml-10 w-full">
+      <div className="overflow-auto h-[65vh] flex flex-col lg:ml-10 w-full">
         <table>
           <thead className="sticky top-0 bg-white z-10">
             <tr>
@@ -33,16 +33,16 @@ function TopWalletTable({ data }) {
                 <td className="flex items-center justify-center">
                   <div className="flex items-center justify-start w-[90%]">
                     {wallet.type === "Project " || wallet.type === "Project" ? (
-                      <span className="w-[18px] h-[18px] bg-[#ff0000] rounded mr-3"></span>
+                      <span className="w-[15px] h-[15px] bg-[#ff0000] rounded mr-3"></span>
                     ) : wallet.type === "DEX " || wallet.type === "DEX" ? (
-                      <span className="w-[18px] h-[18px] bg-[#FFA500] rounded mr-3"></span>
+                      <span className="w-[15px] h-[15px] bg-[#FFA500] rounded mr-3"></span>
                     ) : wallet.type === "Insider Wallet " ||
                       wallet.type === "Insider Wallet" ? (
-                      <span className="w-[18px] h-[18px] bg-[#0000FF] rounded mr-3"></span>
+                      <span className="w-[15px] h-[15px] bg-[#0000FF] rounded mr-3"></span>
                     ) : wallet.type === "Whale " || wallet.type === "Whale" ? (
-                      <span className="w-[18px] h-[18px] bg-[#000] rounded mr-3"></span>
+                      <span className="w-[15px] h-[15px] bg-[#000] rounded mr-3"></span>
                     ) : (
-                      <span className="w-[18px] h-[18px] bg-[#808080] rounded mr-3"></span>
+                      <span className="w-[15px] h-[15px] bg-[#808080] rounded mr-3"></span>
                     )}
                     {wallet.type}
                   </div>

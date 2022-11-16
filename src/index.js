@@ -6,15 +6,18 @@ import "./css/404.css";
 import "./css/navbar.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { GlobalContextProvider } from "./components/GlobalContext";
+import { AuthContextProvider } from "./context/AuthContext";
+import { GlobalContextProvider } from "./context/GlobalContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <GlobalContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </GlobalContextProvider>
+    <AuthContextProvider>
+      <GlobalContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </GlobalContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );

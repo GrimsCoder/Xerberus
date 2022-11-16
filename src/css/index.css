@@ -78,7 +78,7 @@ td {
   text-align: center;
   padding: 8px;
   height: 65px;
-  box-shadow: inset 0 0.5px 0 #e0dede;
+  border-bottom-width: 1px;
 }
 
 th {
@@ -113,7 +113,6 @@ thead button.descending::after {
   vertical-align: middle;
   color: black;
 }
-
 .nav-effect {
   transition: 0.4s;
 }
@@ -191,8 +190,7 @@ thead button.descending::after {
     -webkit-transform: translateX(-200%);
   }
 }
-@media screen and (min-width: 600px) {
-  .testers {
-    display: flex;
-  }
+
+ol {
+  list-style-type: decimal;
 }
